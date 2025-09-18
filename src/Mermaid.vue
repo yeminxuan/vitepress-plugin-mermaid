@@ -133,8 +133,8 @@ const toggleFullscreen = () => {
   isFullscreen.value = !isFullscreen.value;
 
   const container = document.querySelector(`.mermaid-container[data-mermaid-id="${props.id}"]`);
-
   if (isFullscreen.value) {
+
     // Add fullscreen class to the body to handle overflow.
     document.body.classList.add('mermaid-fullscreen-mode');
 
@@ -144,8 +144,11 @@ const toggleFullscreen = () => {
     // Reset zoom and position when entering fullscreen.
     resetZoom();
 
+    // Append dom at body element.
+    document.body.appendChild(container); 
+
     // Add event listener for ESC key.
-    document.addEventListener('keydown', handleKeyDown);
+    container.addEventListener('keydown', handleKeyDown);
 
     // Add event listeners for drag start and mouse wheel zoom.
     if (diagramContent.value) {
@@ -162,8 +165,11 @@ const toggleFullscreen = () => {
     // Reset zoom and position when exiting fullscreen.
     resetZoom();
 
+    // Remove dom from body element.
+    document.body.removeChild(container); 
+
     // Remove event listener for ESC key.
-    document.removeEventListener('keydown', handleKeyDown);
+    container.removeEventListener('keydown', handleKeyDown);
 
     // Remove event listeners for drag and wheel.
     if (diagramContent.value) {
