@@ -1,6 +1,6 @@
 <template>
-  <div class="mermaid-container" :class="props.class" :data-mermaid-id="props.id">
-    <div v-html="svg" class="mermaid-content" :style="contentStyle" ref="diagramContent"></div>
+  <div class="mermaid-container" :class="props.class" :data-mermaid-id="props.id" ref="diagramContent">
+    <div v-html="svg" class="mermaid-content" :style="contentStyle"></div>
     <button
         class="mermaid-fullscreen-btn"
         @click="toggleFullscreen"
