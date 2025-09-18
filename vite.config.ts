@@ -13,6 +13,10 @@ export default defineConfig({
           src: "src/Mermaid.vue",
           dest: "./",
         },
+         {
+          src: "src/DragMermaid.vue",
+          dest: "./",
+        },
         {
           src: "src/mermaid.ts",
           dest: "./",

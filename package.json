@@ -26,7 +26,8 @@
       "import": "./dist/vitepress-plugin-mermaid.es.mjs",
       "require": "./dist/vitepress-plugin-mermaid.umd.js"
     },
-    "./Mermaid.vue": "./dist/Mermaid.vue"
+    "./Mermaid.vue": "./dist/Mermaid.vue",
+    "./DragMermaid.vue": "./dist/DragMermaid.vue"
   },
   "keywords": [
     "vitepress",
