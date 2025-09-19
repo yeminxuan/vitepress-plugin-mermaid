@@ -8,7 +8,7 @@ export default defineConfig({
         __dirname,
         "../dist/Mermaid.vue"
       ),
-      "vitepress-plugin-mermaid/Mermaid.vue": path.join(
+      "vitepress-plugin-mermaid/DragMermaid.vue": path.join(
         __dirname,
         "../dist/DragMermaid.vue"
       ),

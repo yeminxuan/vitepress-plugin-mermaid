@@ -1,9 +1,9 @@
 <template>
   <div class="mermaid-container" :class="props.class" :data-mermaid-id="props.id +'-clone'" ref="diagramContent">
-    <div v-html="svg" class="mermaid-content" :style="contentStyle"></div>
+    <div v-html="svg" class="mermaid-drag-content" :style="contentStyle"></div>
       <button
         class="mermaid-fullscreen-btn"
-        @click="destoryFullscreen"
+        @click="destroyFullscreen"
         title="View in fullscreen"
     >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 21v-5h2v3h3v2zm13 0v-2h3v-3h2v5zM3 8V3h5v2H5v3zm16 0V5h-3V3h5v5z"/></svg>
@@ -87,11 +87,11 @@ const stopDrag = () => {
 };
 const handleKeyDown = (event) => {
   if (event.key === 'Escape') {
-    destoryFullscreen()
+    destroyFullscreen()
   }
 };
 
-const destoryFullscreen = () => {
+const destroyFullscreen = () => {
   const container = document.querySelector(`.mermaid-container[data-mermaid-id="${props.id}-clone"]`);
     
     // Remove fullscreen class from the body.
@@ -155,12 +155,9 @@ onMounted(() => {
 .mermaid-drag-content {
   width: 100%;
   height: 100%;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-.mermaid-content {
-  width: 100%;
 }
 .mermaid-fullscreen-btn {
   position: absolute;
